@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1100" width="1300" height="1100">
+  <defs>
+    <style>
+      .user-box { fill: #bfdbfe; stroke: #1d4ed8; stroke-width: 2.5; }
+      .ui-box { fill: #ddd6fe; stroke: #7c3aed; stroke-width: 2; }
+      .feature-box { fill: #fde68a; stroke: #d97706; stroke-width: 2; }
+      .ai-box { fill: #bbf7d0; stroke: #15803d; stroke-width: 2; }
+      .data-box { fill: #fecaca; stroke: #dc2626; stroke-width: 2; }
+      .output-box { fill: #a7f3d0; stroke: #047857; stroke-width: 2.5; }
+      .title-text { font-family: 'Arial', sans-serif; font-size: 13px; font-weight: bold; fill: #1e293b; }
+      .subtitle-text { font-family: 'Arial', sans-serif; font-size: 10px; fill: #475569; }
+      .arrow { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .user-arrow { stroke: #3b82f6; stroke-width: 3; fill: none; marker-end: url(#arrowhead-blue); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b" />
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="650" y="35" text-anchor="middle" style="font-family: Arial; font-size: 28px; font-weight: bold; fill: #0f172a;">
+    产品逻辑图
+  </text>
+  <text x="650" y="58" text-anchor="middle" style="font-family: Arial; font-size: 14px; fill: #64748b;">
+    Product Logic Diagram - 课程材料 RAG 聊天机器人
+  </text>
+
+  <!-- User Layer -->
+  <rect x="50" y="100" width="1200" height="120" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" rx="5"/>
+  <text x="70" y="125" style="font-family: Arial; font-size: 16px; font-weight: bold; fill: #1e3a8a;">用户层 (User Layer)</text>
+
+  <ellipse cx="200" cy="165" rx="80" ry="40" class="user-box"/>
+  <text x="200" y="165" text-anchor="middle" class="title-text">学生/教师</text>
+  <text x="200" y="180" text-anchor="middle" class="subtitle-text">课程学习者</text>
+
+  <rect x="350" y="135" width="180" height="60" class="user-box" rx="5"/>
+  <text x="440" y="158" text-anchor="middle" class="title-text">需求场景</text>
+  <text x="440" y="173" text-anchor="middle" class="subtitle-text">• 查询课程内容</text>
+  <text x="440" y="186" text-anchor="middle" style="font-size: 9px; fill: #1e40af;">• 理解课程概念</text>
+
+  <rect x="570" y="135" width="180" height="60" class="user-box" rx="5"/>
+  <text x="660" y="158" text-anchor="middle" class="title-text">用户目标</text>
+  <text x="660" y="173" text-anchor="middle" class="subtitle-text">• 快速找到答案</text>
+  <text x="660" y="186" text-anchor="middle" style="font-size: 9px; fill: #1e40af;">• 获取准确信息</text>
+
+  <rect x="790" y="135" width="180" height="60" class="user-box" rx="5"/>
+  <text x="880" y="158" text-anchor="middle" class="title-text">用户操作</text>
+  <text x="880" y="173" text-anchor="middle" class="subtitle-text">• 输入自然语言问题</text>
+  <text x="880" y="186" text-anchor="middle" style="font-size: 9px; fill: #1e40af;">• 查看答案和来源</text>
+
+  <rect x="1010" y="135" width="180" height="60" class="user-box" rx="5"/>
+  <text x="1100" y="158" text-anchor="middle" class="title-text">用户体验</text>
+  <text x="1100" y="173" text-anchor="middle" class="subtitle-text">• 简洁界面</text>
+  <text x="1100" y="186" text-anchor="middle" style="font-size: 9px; fill: #1e40af;">• 即时响应</text>
+
+  <!-- UI Layer -->
+  <rect x="50" y="250" width="1200" height="150" fill="#faf5ff" stroke="#7c3aed" stroke-width="2" rx="5"/>
+  <text x="70" y="275" style="font-family: Arial; font-size: 16px; font-weight: bold; fill: #5b21b6;">界面层 (UI Layer)</text>
+
+  <rect x="120" y="300" width="200" height="80" class="ui-box" rx="5"/>
+  <text x="220" y="325" text-anchor="middle" class="title-text">聊天界面</text>
+  <text x="220" y="340" text-anchor="middle" class="subtitle-text">• 消息显示区</text>
+  <text x="220" y="355" text-anchor="middle" class="subtitle-text">• 输入框</text>
+  <text x="220" y="370" text-anchor="middle" style="font-size: 9px; fill: #6b21a8;">• 发送按钮</text>
+
+  <rect x="360" y="300" width="200" height="80" class="ui-box" rx="5"/>
+  <text x="460" y="325" text-anchor="middle" class="title-text">侧边栏</text>
+  <text x="460" y="340" text-anchor="middle" class="subtitle-text">• 课程统计</text>
+  <text x="460" y="355" text-anchor="middle" class="subtitle-text">• 建议问题</text>
+  <text x="460" y="370" text-anchor="middle" style="font-size: 9px; fill: #6b21a8;">• 快速导航</text>
+
+  <rect x="600" y="300" width="200" height="80" class="ui-box" rx="5"/>
+  <text x="700" y="325" text-anchor="middle" class="title-text">消息渲染</text>
+  <text x="700" y="340" text-anchor="middle" class="subtitle-text">• Markdown 支持</text>
+  <text x="700" y="355" text-anchor="middle" class="subtitle-text">• 代码高亮</text>
+  <text x="700" y="370" text-anchor="middle" style="font-size: 9px; fill: #6b21a8;">• 来源链接</text>
+
+  <rect x="840" y="300" width="200" height="80" class="ui-box" rx="5"/>
+  <text x="940" y="325" text-anchor="middle" class="title-text">交互反馈</text>
+  <text x="940" y="340" text-anchor="middle" class="subtitle-text">• 加载动画</text>
+  <text x="940" y="355" text-anchor="middle" class="subtitle-text">• 错误提示</text>
+  <text x="940" y="370" text-anchor="middle" style="font-size: 9px; fill: #6b21a8;">• 成功提示</text>
+
+  <rect x="1080" y="300" width="150" height="80" class="ui-box" rx="5"/>
+  <text x="1155" y="328" text-anchor="middle" class="title-text">响应式设计</text>
+  <text x="1155" y="343" text-anchor="middle" class="subtitle-text">• 桌面适配</text>
+  <text x="1155" y="358" text-anchor="middle" class="subtitle-text">• 移动适配</text>
+
+  <!-- Core Features Layer -->
+  <rect x="50" y="430" width="1200" height="200" fill="#fffbeb" stroke="#d97706" stroke-width="2" rx="5"/>
+  <text x="70" y="455" style="font-family: Arial; font-size: 16px; font-weight: bold; fill: #92400e;">核心功能层 (Core Features)</text>
+
+  <rect x="100" y="480" width="220" height="130" class="feature-box" rx="5"/>
+  <text x="210" y="503" text-anchor="middle" class="title-text">1. 智能问答</text>
+  <text x="210" y="523" text-anchor="middle" class="subtitle-text">• 自然语言理解</text>
+  <text x="210" y="538" text-anchor="middle" class="subtitle-text">• 上下文感知</text>
+  <text x="210" y="553" text-anchor="middle" class="subtitle-text">• 多轮对话支持</text>
+  <text x="210" y="568" text-anchor="middle" style="font-size: 9px; fill: #78350f;">• 会话历史管理</text>
+  <text x="210" y="583" text-anchor="middle" style="font-size: 9px; fill: #78350f;">（最多保留2轮）</text>
+  <text x="210" y="598" text-anchor="middle" style="font-size: 9px; fill: #78350f; font-weight: bold;">核心价值: 智能对话</text>
+
+  <rect x="360" y="480" width="220" height="130" class="feature-box" rx="5"/>
+  <text x="470" y="503" text-anchor="middle" class="title-text">2. 语义搜索</text>
+  <text x="470" y="523" text-anchor="middle" class="subtitle-text">• 向量相似度匹配</text>
+  <text x="470" y="538" text-anchor="middle" class="subtitle-text">• 课程名称过滤</text>
+  <text x="470" y="553" text-anchor="middle" class="subtitle-text">• Lesson 级别检索</text>
+  <text x="470" y="568" text-anchor="middle" style="font-size: 9px; fill: #78350f;">• 超越关键词搜索</text>
+  <text x="470" y="583" text-anchor="middle" style="font-size: 9px; fill: #78350f;">• 理解语义含义</text>
+  <text x="470" y="598" text-anchor="middle" style="font-size: 9px; fill: #78350f; font-weight: bold;">核心价值: 精准检索</text>
+
+  <rect x="620" y="480" width="220" height="130" class="feature-box" rx="5"/>
+  <text x="730" y="503" text-anchor="middle" class="title-text">3. 来源追溯</text>
+  <text x="730" y="523" text-anchor="middle" class="subtitle-text">• 课程名称标注</text>
+  <text x="730" y="538" text-anchor="middle" class="subtitle-text">• Lesson 链接</text>
+  <text x="730" y="553" text-anchor="middle" class="subtitle-text">• 内容引用</text>
+  <text x="730" y="568" text-anchor="middle" style="font-size: 9px; fill: #78350f;">• 答案可验证</text>
+  <text x="730" y="583" text-anchor="middle" style="font-size: 9px; fill: #78350f;">• 知识溯源</text>
+  <text x="730" y="598" text-anchor="middle" style="font-size: 9px; fill: #78350f; font-weight: bold;">核心价值: 可信度</text>
+
+  <rect x="880" y="480" width="220" height="130" class="feature-box" rx="5"/>
+  <text x="990" y="503" text-anchor="middle" class="title-text">4. 工具调用</text>
+  <text x="990" y="523" text-anchor="middle" class="subtitle-text">• AI 自主决策</text>
+  <text x="990" y="538" text-anchor="middle" class="subtitle-text">• 动态工具选择</text>
+  <text x="990" y="553" text-anchor="middle" class="subtitle-text">• 结果自动整合</text>
+  <text x="990" y="568" text-anchor="middle" style="font-size: 9px; fill: #78350f;">• Claude Tool Calling</text>
+  <text x="990" y="583" text-anchor="middle" style="font-size: 9px; fill: #78350f;">• 扩展性强</text>
+  <text x="990" y="598" text-anchor="middle" style="font-size: 9px; fill: #78350f; font-weight: bold;">核心价值: 智能化</text>
+
+  <!-- AI Processing Layer -->
+  <rect x="50" y="660" width="600" height="130" fill="#f0fdf4" stroke="#15803d" stroke-width="2" rx="5"/>
+  <text x="70" y="685" style="font-family: Arial; font-size: 16px; font-weight: bold; fill: #14532d;">AI 处理层 (AI Processing)</text>
+
+  <rect x="100" y="710" width="220" height="60" class="ai-box" rx="5"/>
+  <text x="210" y="733" text-anchor="middle" class="title-text">Claude Sonnet 4</text>
+  <text x="210" y="748" text-anchor="middle" class="subtitle-text">• 理解查询意图</text>
+  <text x="210" y="761" text-anchor="middle" style="font-size: 9px; fill: #14532d;">• 生成自然回答</text>
+
+  <rect x="360" y="710" width="220" height="60" class="ai-box" rx="5"/>
+  <text x="470" y="733" text-anchor="middle" class="title-text">上下文增强</text>
+  <text x="470" y="748" text-anchor="middle" class="subtitle-text">• 检索相关内容</text>
+  <text x="470" y="761" text-anchor="middle" style="font-size: 9px; fill: #14532d;">• 丰富回答依据</text>
+
+  <!-- Data Layer -->
+  <rect x="680" y="660" width="570" height="130" fill="#fef2f2" stroke="#dc2626" stroke-width="2" rx="5"/>
+  <text x="700" y="685" style="font-family: Arial; font-size: 16px; font-weight: bold; fill: #7f1d1d;">数据层 (Data Layer)</text>
+
+  <rect x="730" y="710" width="150" height="60" class="data-box" rx="5"/>
+  <text x="805" y="733" text-anchor="middle" class="title-text">课程文档</text>
+  <text x="805" y="748" text-anchor="middle" class="subtitle-text">4 门课程</text>
+  <text x="805" y="761" text-anchor="middle" style="font-size: 9px; fill: #7f1d1d;">TXT/PDF/DOCX</text>
+
+  <rect x="920" y="710" width="150" height="60" class="data-box" rx="5"/>
+  <text x="995" y="733" text-anchor="middle" class="title-text">向量数据库</text>
+  <text x="995" y="748" text-anchor="middle" class="subtitle-text">ChromaDB</text>
+  <text x="995" y="761" text-anchor="middle" style="font-size: 9px; fill: #7f1d1d;">本地存储</text>
+
+  <rect x="1100" y="710" width="130" height="60" class="data-box" rx="5"/>
+  <text x="1165" y="733" text-anchor="middle" class="title-text">会话数据</text>
+  <text x="1165" y="748" text-anchor="middle" class="subtitle-text">内存存储</text>
+
+  <!-- Output Layer -->
+  <rect x="50" y="820" width="1200" height="150" fill="#ecfdf5" stroke="#047857" stroke-width="2" rx="5"/>
+  <text x="70" y="845" style="font-family: Arial; font-size: 16px; font-weight: bold; fill: #064e3b;">输出层 (Output Layer)</text>
+
+  <rect x="150" y="870" width="240" height="80" class="output-box" rx="5"/>
+  <text x="270" y="895" text-anchor="middle" class="title-text">智能答案</text>
+  <text x="270" y="910" text-anchor="middle" class="subtitle-text">• 准确、相关</text>
+  <text x="270" y="925" text-anchor="middle" class="subtitle-text">• 易于理解</text>
+  <text x="270" y="940" text-anchor="middle" style="font-size: 9px; fill: #065f46;">• Markdown 格式</text>
+
+  <rect x="430" y="870" width="240" height="80" class="output-box" rx="5"/>
+  <text x="550" y="895" text-anchor="middle" class="title-text">来源引用</text>
+  <text x="550" y="910" text-anchor="middle" class="subtitle-text">• 课程名称</text>
+  <text x="550" y="925" text-anchor="middle" class="subtitle-text">• Lesson 标题和链接</text>
+  <text x="550" y="940" text-anchor="middle" style="font-size: 9px; fill: #065f46;">• 可点击跳转</text>
+
+  <rect x="710" y="870" width="240" height="80" class="output-box" rx="5"/>
+  <text x="830" y="895" text-anchor="middle" class="title-text">会话延续</text>
+  <text x="830" y="910" text-anchor="middle" class="subtitle-text">• Session ID</text>
+  <text x="830" y="925" text-anchor="middle" class="subtitle-text">• 支持追问</text>
+  <text x="830" y="940" text-anchor="middle" style="font-size: 9px; fill: #065f46;">• 上下文连贯</text>
+
+  <rect x="990" y="870" width="220" height="80" class="output-box" rx="5"/>
+  <text x="1100" y="895" text-anchor="middle" class="title-text">用户满意度</text>
+  <text x="1100" y="910" text-anchor="middle" class="subtitle-text">✓ 问题解决</text>
+  <text x="1100" y="925" text-anchor="middle" class="subtitle-text">✓ 学习效率提升</text>
+  <text x="1100" y="940" text-anchor="middle" style="font-size: 9px; fill: #065f46;">✓ 知识获取</text>
+
+  <!-- Arrows showing flow -->
+  <path d="M 200 205 L 220 300" class="user-arrow"/>
+  <path d="M 220 380 L 210 480" class="arrow"/>
+  <path d="M 210 610 L 210 710" class="arrow"/>
+  <path d="M 210 770 L 270 870" class="arrow"/>
+
+  <!-- Additional flow arrows -->
+  <line x1="470" y1="610" x2="470" y2="710" class="arrow"/>
+  <line x1="805" y1="770" x2="550" y2="870" class="arrow"/>
+  <line x1="995" y1="770" x2="830" y2="870" class="arrow"/>
+
+  <!-- Value Proposition Box -->
+  <rect x="50" y="1000" width="1200" height="80" fill="#fefce8" stroke="#854d0e" stroke-width="2" rx="5"/>
+  <text x="70" y="1025" style="font-family: Arial; font-size: 15px; font-weight: bold; fill: #713f12;">
+    产品核心价值主张 (Value Proposition)
+  </text>
+  <text x="70" y="1050" style="font-family: Arial; font-size: 12px; fill: #854d0e;">
+    ✓ <tspan font-weight="bold">智能化</tspan>: AI 驱动的自然语言理解和回答生成
+  </text>
+  <text x="70" y="1070" style="font-family: Arial; font-size: 12px; fill: #854d0e;">
+    ✓ <tspan font-weight="bold">精准性</tspan>: 语义搜索找到最相关内容，超越关键词匹配
+  </text>
+  <text x="700" y="1050" style="font-family: Arial; font-size: 12px; fill: #854d0e;">
+    ✓ <tspan font-weight="bold">可信度</tspan>: 每个答案都有明确的来源引用，可验证
+  </text>
+  <text x="700" y="1070" style="font-family: Arial; font-size: 12px; fill: #854d0e;">
+    ✓ <tspan font-weight="bold">易用性</tspan>: 简洁界面，自然对话，即时响应
+  </text>
+</svg>

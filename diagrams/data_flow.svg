@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+  <defs>
+    <style>
+      .process-box { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+      .decision-box { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; }
+      .ai-box { fill: #d1fae5; stroke: #059669; stroke-width: 2; }
+      .data-box { fill: #fef08a; stroke: #ca8a04; stroke-width: 2; }
+      .start-box { fill: #86efac; stroke: #16a34a; stroke-width: 2; }
+      .end-box { fill: #fca5a5; stroke: #dc2626; stroke-width: 2; }
+      .title-text { font-family: 'Arial', sans-serif; font-size: 13px; font-weight: bold; fill: #1e293b; }
+      .subtitle-text { font-family: 'Arial', sans-serif; font-size: 10px; fill: #475569; }
+      .arrow { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .arrow-yes { stroke: #16a34a; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead-green); }
+      .arrow-no { stroke: #dc2626; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead-red); }
+      .label-text { font-family: 'Arial', sans-serif; font-size: 11px; fill: #64748b; font-weight: bold; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#16a34a" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#dc2626" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="30" text-anchor="middle" style="font-family: Arial; font-size: 26px; font-weight: bold; fill: #0f172a;">
+    查询处理数据流程图
+  </text>
+  <text x="700" y="52" text-anchor="middle" style="font-family: Arial; font-size: 13px; fill: #64748b;">
+    Query Processing Data Flow Diagram
+  </text>
+
+  <!-- Start -->
+  <ellipse cx="700" cy="100" rx="80" ry="35" class="start-box"/>
+  <text x="700" y="100" text-anchor="middle" class="title-text">用户输入</text>
+  <text x="700" y="115" text-anchor="middle" class="subtitle-text">User Query</text>
+
+  <!-- Frontend -->
+  <rect x="600" y="160" width="200" height="50" class="process-box" rx="5"/>
+  <text x="700" y="180" text-anchor="middle" class="title-text">前端 script.js</text>
+  <text x="700" y="195" text-anchor="middle" class="subtitle-text">创建/获取 Session ID</text>
+
+  <!-- API Call -->
+  <rect x="600" y="240" width="200" height="50" class="process-box" rx="5"/>
+  <text x="700" y="260" text-anchor="middle" class="title-text">POST /api/query</text>
+  <text x="700" y="275" text-anchor="middle" class="subtitle-text">{query, session_id}</text>
+
+  <!-- Check Session -->
+  <path d="M 650 340 L 700 320 L 750 340 L 700 360 Z" class="decision-box"/>
+  <text x="700" y="340" text-anchor="middle" class="title-text">检查会话?</text>
+  <text x="700" y="353" text-anchor="middle" style="font-size: 9px; fill: #78716c;">Session存在?</text>
+
+  <!-- Load History -->
+  <rect x="430" y="390" width="170" height="50" class="process-box" rx="5"/>
+  <text x="515" y="410" text-anchor="middle" class="title-text">加载对话历史</text>
+  <text x="515" y="425" text-anchor="middle" class="subtitle-text">Session Manager</text>
+
+  <!-- New Session -->
+  <rect x="800" y="390" width="170" height="50" class="process-box" rx="5"/>
+  <text x="885" y="410" text-anchor="middle" class="title-text">创建新会话</text>
+  <text x="885" y="425" text-anchor="middle" class="subtitle-text">New Session</text>
+
+  <!-- Send to Claude -->
+  <rect x="600" y="480" width="200" height="60" class="ai-box" rx="5"/>
+  <text x="700" y="500" text-anchor="middle" class="title-text">Claude AI 分析</text>
+  <text x="700" y="515" text-anchor="middle" class="subtitle-text">System Prompt</text>
+  <text x="700" y="528" text-anchor="middle" style="font-size: 9px; fill: #059669;">+ 对话历史 + 工具定义</text>
+
+  <!-- Decision: Need Search -->
+  <path d="M 650 600 L 700 570 L 750 600 L 700 630 Z" class="decision-box"/>
+  <text x="700" y="600" text-anchor="middle" class="title-text">需要搜索?</text>
+  <text x="700" y="613" text-anchor="middle" style="font-size: 9px; fill: #78716c;">Tool Calling</text>
+
+  <!-- Direct Answer Path -->
+  <rect x="900" y="580" width="170" height="50" class="ai-box" rx="5"/>
+  <text x="985" y="600" text-anchor="middle" class="title-text">直接生成答案</text>
+  <text x="985" y="615" text-anchor="middle" class="subtitle-text">Direct Response</text>
+
+  <!-- Tool Execution Path -->
+  <rect x="220" y="670" width="190" height="50" class="process-box" rx="5"/>
+  <text x="315" y="690" text-anchor="middle" class="title-text">调用搜索工具</text>
+  <text x="315" y="705" text-anchor="middle" class="subtitle-text">CourseSearchTool</text>
+
+  <!-- Course Name Matching -->
+  <rect x="220" y="750" width="190" height="50" class="data-box" rx="5"/>
+  <text x="315" y="770" text-anchor="middle" class="title-text">课程名称匹配</text>
+  <text x="315" y="785" text-anchor="middle" class="subtitle-text">course_catalog 集合</text>
+
+  <!-- Semantic Search -->
+  <rect x="220" y="830" width="190" height="60" class="data-box" rx="5"/>
+  <text x="315" y="850" text-anchor="middle" class="title-text">语义向量搜索</text>
+  <text x="315" y="865" text-anchor="middle" class="subtitle-text">course_content 集合</text>
+  <text x="315" y="880" text-anchor="middle" style="font-size: 9px; fill: #78716c;">ChromaDB</text>
+
+  <!-- Format Results -->
+  <rect x="470" y="830" width="170" height="60" class="process-box" rx="5"/>
+  <text x="555" y="850" text-anchor="middle" class="title-text">格式化结果</text>
+  <text x="555" y="865" text-anchor="middle" class="subtitle-text">课程名 + Lesson</text>
+  <text x="555" y="880" text-anchor="middle" style="font-size: 9px; fill: #78716c;">+ 链接 + 来源</text>
+
+  <!-- Return to Claude -->
+  <rect x="470" y="730" width="170" height="50" class="ai-box" rx="5"/>
+  <text x="555" y="750" text-anchor="middle" class="title-text">返回给 Claude</text>
+  <text x="555" y="765" text-anchor="middle" class="subtitle-text">Tool Result</text>
+
+  <!-- Generate Answer -->
+  <rect x="670" y="730" width="190" height="50" class="ai-box" rx="5"/>
+  <text x="765" y="750" text-anchor="middle" class="title-text">基于上下文生成答案</text>
+  <text x="765" y="765" text-anchor="middle" class="subtitle-text">Generate with Context</text>
+
+  <!-- Save to Session -->
+  <rect x="900" y="710" width="170" height="50" class="process-box" rx="5"/>
+  <text x="985" y="730" text-anchor="middle" class="title-text">保存到会话历史</text>
+  <text x="985" y="745" text-anchor="middle" class="subtitle-text">Session Manager</text>
+
+  <!-- Return Response -->
+  <rect x="900" y="800" width="170" height="60" class="process-box" rx="5"/>
+  <text x="985" y="820" text-anchor="middle" class="title-text">返回响应</text>
+  <text x="985" y="835" text-anchor="middle" class="subtitle-text">answer + sources</text>
+  <text x="985" y="850" text-anchor="middle" style="font-size: 9px; fill: #78716c;">+ session_id</text>
+
+  <!-- Display in Frontend -->
+  <rect x="900" y="900" width="170" height="50" class="process-box" rx="5"/>
+  <text x="985" y="920" text-anchor="middle" class="title-text">前端展示</text>
+  <text x="985" y="935" text-anchor="middle" class="subtitle-text">Markdown 渲染</text>
+
+  <!-- End -->
+  <ellipse cx="985" cy="985" rx="65" ry="30" class="end-box"/>
+  <text x="985" y="990" text-anchor="middle" class="title-text">完成</text>
+
+  <!-- Arrows -->
+  <line x1="700" y1="135" x2="700" y2="160" class="arrow"/>
+  <line x1="700" y1="210" x2="700" y2="240" class="arrow"/>
+  <line x1="700" y1="290" x2="700" y2="320" class="arrow"/>
+
+  <!-- Session check paths -->
+  <path d="M 650 340 L 515 390" class="arrow-yes"/>
+  <text x="570" y="365" class="label-text" fill="#16a34a">是 (Yes)</text>
+
+  <path d="M 750 340 L 885 390" class="arrow-no"/>
+  <text x="810" y="365" class="label-text" fill="#dc2626">否 (No)</text>
+
+  <!-- Merge to Claude -->
+  <path d="M 515 440 L 650 480" class="arrow"/>
+  <path d="M 885 440 L 750 480" class="arrow"/>
+
+  <line x1="700" y1="540" x2="700" y2="570" class="arrow"/>
+
+  <!-- Decision paths -->
+  <path d="M 750 600 L 900 600" class="arrow-no"/>
+  <text x="810" y="592" class="label-text" fill="#dc2626">否</text>
+
+  <path d="M 650 600 L 315 670" class="arrow-yes"/>
+  <text x="450" y="640" class="label-text" fill="#16a34a">是 - 执行工具</text>
+
+  <!-- Search flow -->
+  <line x1="315" y1="720" x2="315" y2="750" class="arrow"/>
+  <line x1="315" y1="800" x2="315" y2="830" class="arrow"/>
+  <line x1="410" y1="860" x2="470" y2="860" class="arrow"/>
+  <line x1="555" y1="830" x2="555" y2="780" class="arrow"/>
+  <path d="M 640 755 L 670 755" class="arrow"/>
+
+  <!-- Generate answer -->
+  <path d="M 860 755 L 900 735" class="arrow"/>
+  <line x1="985" y1="630" x2="985" y2="710" class="arrow"/>
+  <line x1="985" y1="760" x2="985" y2="800" class="arrow"/>
+  <line x1="985" y1="860" x2="985" y2="900" class="arrow"/>
+  <line x1="985" y1="950" x2="985" y2="955" class="arrow"/>
+
+  <!-- Legend -->
+  <rect x="50" y="900" width="250" height="85" fill="none" stroke="#94a3b8" stroke-width="1" rx="3"/>
+  <text x="65" y="920" style="font-family: Arial; font-size: 12px; font-weight: bold; fill: #334155;">图例 (Legend)</text>
+
+  <line x1="70" y1="935" x2="110" y2="935" class="arrow-yes"/>
+  <text x="120" y="940" style="font-family: Arial; font-size: 11px; fill: #16a34a;">肯定分支</text>
+
+  <line x1="70" y1="955" x2="110" y2="955" class="arrow-no"/>
+  <text x="120" y="960" style="font-family: Arial; font-size: 11px; fill: #dc2626;">否定分支</text>
+
+  <line x1="70" y1="975" x2="110" y2="975" class="arrow"/>
+  <text x="120" y="980" style="font-family: Arial; font-size: 11px; fill: #64748b;">数据流</text>
+
+  <!-- Process Description -->
+  <rect x="50" y="50" width="400" height="120" fill="none" stroke="#94a3b8" stroke-width="1" rx="3"/>
+  <text x="65" y="70" style="font-family: Arial; font-size: 12px; font-weight: bold; fill: #334155;">核心流程说明:</text>
+  <text x="65" y="90" style="font-family: Arial; font-size: 10px; fill: #475569;">
+    1. 用户在前端输入查询问题
+  </text>
+  <text x="65" y="105" style="font-family: Arial; font-size: 10px; fill: #475569;">
+    2. 系统加载会话上下文（如果存在）
+  </text>
+  <text x="65" y="120" style="font-family: Arial; font-size: 10px; fill: #475569;">
+    3. Claude AI 决定是否需要搜索工具
+  </text>
+  <text x="65" y="135" style="font-family: Arial; font-size: 10px; fill: #475569;">
+    4. 执行语义搜索（如需要）
+  </text>
+  <text x="65" y="150" style="font-family: Arial; font-size: 10px; fill: #475569;">
+    5. 生成答案并返回来源引用
+  </text>
+  <text x="65" y="165" style="font-family: Arial; font-size: 10px; fill: #475569;">
+    6. 前端渲染并展示给用户
+  </text>
+</svg>
